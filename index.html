@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destiny App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--main div for the whole app-->
+<div id="destiny-app">
+<!--each card layout-->
+    <div class="card" v-for="chr in cards" v-bind:class="chr.color">
+            <img v-bind:src="chr.img" alt="Picture of the Character">
+            <div class="health">{{chr.health}}</div>
+            <div v-if="chr.rarity" class="rarity rare">{{chr.setNumber}}</div>
+            <div v-else class="rarity legendary">{{chr.setNumber}}</div>
+            <div class="name">{{chr.name}}</div>
+            <div class="affl" v-bind:class="chr.affl" >{{chr.affl}}</div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="apps.js"></script>
+</body>
+</html>
